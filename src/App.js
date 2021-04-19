@@ -16,6 +16,10 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   const filteredCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -30,7 +34,7 @@ function App() {
           <input
             className="inputField"
             type="text"
-            //onChange={handleChange}
+            onChange={handleChange}
             placeholder="Search a Coin"
           />
         </form>
